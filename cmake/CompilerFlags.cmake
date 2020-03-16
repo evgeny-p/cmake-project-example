@@ -1,0 +1,19 @@
+function(set_compiler_flags target)
+  if(MSVS)
+    target_compile_options(
+      ${target}
+      PRIVATE
+        /W4
+        /Wx
+    )
+  else()
+    target_compile_options(
+      ${target}
+      PRIVATE
+        -Wall
+        -Werror
+        -Wextra
+        -pedantic
+    )
+  endif()
+endfunction(set_compiler_flags)

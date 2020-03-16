@@ -1,0 +1,15 @@
+#pragma once
+
+#include <sstream>
+#include <string>
+
+namespace libarithmetic::test {
+
+inline std::string get_test_data_file_path(const std::string& file_name) {
+  const std::string test_data_dir = "${TEST_DATA_DIR}";
+  std::stringstream ss;
+  ss << test_data_dir << "/" << file_name;
+  return ss.str();
+}
+
+}  // namespace libarithmetic::test
